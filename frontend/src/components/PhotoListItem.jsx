@@ -6,7 +6,7 @@ import PhotoFavButton from "../components/PhotoFavButton";
 const PhotoListItem = (props) => {
 
   return (
-  <div className="photo-list__item" >
+  <div className="photo-list__item">
     <div>
     <PhotoFavButton/>
     </div>
