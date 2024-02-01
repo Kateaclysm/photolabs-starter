@@ -4,18 +4,18 @@ import "../styles/PhotoList.scss";
 import PhotoListItem from "./PhotoListItem";
 import photos from "mocks/photos";
 
-const PhotoList = () => {
+const PhotoList = (props) => {
   return (
     <ul className="photo-list">
-    {photos.map((photos) => {
+    {photos.map((props) => {
       return (
         <PhotoListItem
-        key={photos.id}
-        mainImage={photos.urls.full}
-        imageLocationCity={photos.location.city}
-        imageLocationCountry={photos.location.country}
-        userImage={photos.user.profile}
-        userName={photos.user.username}/>
+        key={props.id}
+        mainImage={props.urls.full}
+        imageLocationCity={props.location.city}
+        imageLocationCountry={props.location.country}
+        userImage={props.user.profile}
+        userName={props.user.username}/>
       )})
     }
     </ul>
