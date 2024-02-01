@@ -7,15 +7,15 @@ import photos from "mocks/photos";
 const PhotoList = (props) => {
   return (
     <ul className="photo-list">
-    {photos.map((props) => {
+    {props.photos.map((props) => {
       return (
         <PhotoListItem
-        key={props.id}
-        mainImage={props.urls.full}
-        imageLocationCity={props.location.city}
-        imageLocationCountry={props.location.country}
-        userImage={props.user.profile}
-        userName={props.user.username}/>
+        key={props.photos.id}
+        mainImage={props.photos.urls.full}
+        imageLocationCity={props.photos.location.city}
+        imageLocationCountry={props.photos.location.country}
+        userImage={props.photos.user.profile}
+        userName={props.photos.user.username}/>
       )})
     }
     </ul>

@@ -8,12 +8,12 @@ import topics from '../mocks/topics';
 const TopicList = (props) => {
   return (
   <ul className="top-nav-bar__topic-list">
-    { topics.map((props) => {
+    { props.topics.map((props) => {
       return (
-        <li key={props.id} className="top-nav-bar__topic-list">
+        <li key={props.topics.id} className="top-nav-bar__topic-list">
           <TopicListItem
-            slug={props.slug}
-            title={props.title}/>
+            slug={props.topics.slug}
+            title={props.topics.title}/>
         </li>
       )})
     }

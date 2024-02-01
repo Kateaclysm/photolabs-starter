@@ -7,8 +7,8 @@ import '../styles/HomeRoute.scss';
 const HomeRoute = () => {
   return (
   <div className="home-route">
-    <TopNavigation/>
-    <PhotoList/>
+    <TopNavigation topics={topics}/>
+    <PhotoList photos={PhotoList}/>
   </div>
   )
 }
