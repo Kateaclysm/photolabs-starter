@@ -1,7 +1,7 @@
 import React from "react";
 import TopicListItem from './TopicListItem'
 import "../styles/TopicList.scss";
-
+import topics from '../mocks/topics';
 const sampleDataForTopicList = [
   {
     id: "1",
