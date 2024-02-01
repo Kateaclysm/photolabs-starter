@@ -1,13 +1,16 @@
 import React from 'react';
 import TopNavigation from 'components/TopNavigationBar';
 import PhotoList from './PhotoList';
-import '../styles/HomeRoute'
+import '../styles/HomeRoute.scss';
 
 const HomeRoute = () => {
   return (
-    <span className=".home-route">
+    <div className="home-route">
     <TopNavigation/>
     <PhotoList/>
-    </span>
+    </div>
   )
 }
+
+
+export default HomeRoute;
