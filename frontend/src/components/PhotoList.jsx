@@ -11,11 +11,14 @@ const PhotoList = (props) => {
       return (
         <PhotoListItem
         key={photo.id}
+        photoId={photo.id}
         mainImage={photo.urls.full}
         imageLocationCity={photo.location.city}
         imageLocationCountry={photo.location.country}
         userImage={photo.user.profile}
-        userName={photo.user.username}/>
+        userName={photo.user.username}
+        toggleFavorite={props.toggleFavorite}
+        favPhotos={props.favPhotos}/>
       )})
     }
     </ul>

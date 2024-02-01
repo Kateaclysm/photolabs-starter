@@ -1,15 +1,13 @@
 import React, { useCallback, useState } from 'react';
-
+import './PhotoListItem'
 import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 
-function PhotoFavButton() {
-  const [like, setLike] = useState(false)
+function PhotoFavButton({photoId, toggleFavorite, liked}) {
+  // const [like, setLike] = useState(false)
   return (
-    <button className="photo-list__fav-icon" onClick={()=>{
-      setLike(!like);
-    }}>
-      <FavIcon selected={like}/>
+    <button className="photo-list__fav-icon" onClick={()=> toggleFavorite(photoId)}>
+      <FavIcon selected={liked}/>
     </button>
   );
 }
