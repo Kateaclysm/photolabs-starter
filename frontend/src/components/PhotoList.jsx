@@ -62,6 +62,7 @@ const PhotoList = () => {
   return (
     <ul className="photo-list">
       {sampleDataForPhotoList.map((post) => {
+      return (
         <PhotoListItem
         key={post.id}
         mainImage={post.urls.full}
@@ -70,6 +71,7 @@ const PhotoList = () => {
         userImage={post.user.profile}
         userName={post.user.username}
         />
+      )
         })}
     </ul>
   );
