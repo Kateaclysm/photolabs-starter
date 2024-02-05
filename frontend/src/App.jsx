@@ -4,6 +4,7 @@ import photos from './mocks/photos'
 import './App.scss';
 import topics from './mocks/topics'
 import HomeRoute from './components/HomeRoute';
+import PhotoDetailsModal from './routes/PhotoDetailsModal'
 // Note: Rendering a single component to build components in isolation
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
   return (
     <div className="App">
       <HomeRoute photos={photos} topics={topics} toggleFavorite={toggleFavorite} favPhotos={favoritePhotos}/>
+      <PhotoDetailsModal/>
     </div>
   );
 };
