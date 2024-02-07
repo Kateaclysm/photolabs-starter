@@ -6,19 +6,6 @@ import PhotoDetailsModal from '../routes/PhotoDetailsModal';
 
 
 const HomeRoute = (props) => {
-
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [selectedPhoto, setSelectedPhoto] = useState(null);
-  
-  // const openModalWithPhoto = (photo) => {
-  //   setSelectedPhoto(photo);
-  //   setIsModalOpen(true);
-  // }
-
-  // const closeModal = () => {
-  //   setIsModalOpen(false);
-  // }
-  
   return (
   <div className="home-route">
     <TopNavigation topics={props.topics} favPhotos={props.favPhotos}/>

@@ -4,10 +4,10 @@ import "../styles/TopicList.scss";
 
 
 
-const TopicList = (props) => {
+const TopicList = ({topics, favPhotos}) => {
   return (
   <ul className="top-nav-bar__topic-list">
-    { props.topics.map((topic) => {
+    {topics.map((topic) => {
       return (
         <li key={topic.id} className="top-nav-bar__topic-list">
           <TopicListItem
