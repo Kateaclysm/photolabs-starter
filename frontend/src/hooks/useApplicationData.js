@@ -36,7 +36,7 @@ function reducer(state, action) {
           ...state,
           topicData: action.payload
         };
-        
+
       default: return state;
   };
 };
@@ -53,11 +53,19 @@ const initialState = {
 const useApplicationData = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const fetchTopicPhotos= (topicId) => {
+    fetch(`/api/topics/photos/${topicId}`)
+    .then(res=> res.json())
+    .then(data => {
+      dispatch({type: "SET_PHOTO_DATA", payload: data})
+    });
+  };
+
   useEffect(() =>{
     fetch("/api/photos")
     .then(res => res.json())
     .then(data => {
-      console.log(data);
+      // console.log(data);
       dispatch({ type: "SET_PHOTO_DATA", payload: data})
     })
   }, []);
@@ -66,7 +74,7 @@ const useApplicationData = () => {
     fetch("/api/topics")
     .then(res => res.json())
     .then(data => {
-      console.log(data);
+      // console.log(data);
       dispatch({ type: "SET_TOPIC_DATA", payload: data})
     })
   }, []);
@@ -87,7 +95,8 @@ const useApplicationData = () => {
     state,
     closeModal,
     openModalWithPhoto,
-    toggleFavorite
+    toggleFavorite,
+    fetchTopicPhotos
   };
 };
 

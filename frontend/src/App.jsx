@@ -11,7 +11,7 @@ import useApplicationData from './hooks/useApplicationData';
 
 const App = () => {
   
-const { state, toggleFavorite, openModalWithPhoto, closeModal} = useApplicationData();
+const { state, toggleFavorite, openModalWithPhoto, closeModal, fetchTopicPhotos} = useApplicationData();
 
   return (
     <div className="App">
@@ -23,7 +23,8 @@ const { state, toggleFavorite, openModalWithPhoto, closeModal} = useApplicationD
       openModalWithPhoto={openModalWithPhoto} 
       isModalOpen={state.isModalOpen}
       closeModal={closeModal}
-      selectedPhoto={state.selectedPhoto}/>
+      selectedPhoto={state.selectedPhoto}
+      fetchTopicPhotos={fetchTopicPhotos}/>
     </div>
   );
 };
