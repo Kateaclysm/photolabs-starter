@@ -5,24 +5,23 @@ import './App.scss';
 import topics from './mocks/topics'
 import HomeRoute from './components/HomeRoute';
 import PhotoDetailsModal from './routes/PhotoDetailsModal'
+import useApplicationData from './hooks/useApplicationData';
 // Note: Rendering a single component to build components in isolation
 
 const App = () => {
-
-  const [favoritePhotos, setFavoritePhotos] = useState([]);
-
-  const toggleFavorite = (photoId) => {
-    
-    setFavoritePhotos(prevFavorites => {
-      return prevFavorites.includes(photoId) ? prevFavorites.filter(id => id !== photoId) :
-      [...prevFavorites, photoId];
-    })
-  }
+  
+const { state, toggleFavorite, openModalWithPhoto, closeModal} = useApplicationData();
 
   return (
     <div className="App">
-      <HomeRoute photos={photos} topics={topics} toggleFavorite={toggleFavorite} favPhotos={favoritePhotos}/>
-      <PhotoDetailsModal/>
+      <HomeRoute photos={photos} 
+      topics={topics} 
+      toggleFavorite={toggleFavorite} 
+      favPhotos={state.favoritePhotos} 
+      openModalWithPhoto={openModalWithPhoto} 
+      isModalOpen={state.isModalOpen}
+      closeModal={closeModal}
+      selectedPhoto={state.selectedPhoto}/>
     </div>
   );
 };

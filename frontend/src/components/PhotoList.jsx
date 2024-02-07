@@ -18,7 +18,8 @@ const PhotoList = (props) => {
         userImage={photo.user.profile}
         userName={photo.user.username}
         toggleFavorite={props.toggleFavorite}
-        favPhotos={props.favPhotos}/>
+        favPhotos={props.favPhotos}
+        onClick={()=> props.onPhotoClick(photo)}/>
       )})
     }
     </ul>
