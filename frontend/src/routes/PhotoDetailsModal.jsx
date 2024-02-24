@@ -16,7 +16,6 @@ const PhotoDetailsModal = (props) => {
         <img className="photo-details-modal__image" src={props.photo.urls.full}/>
         </section>
         {
-        //--------------------------------------------------------------------
       }
       <section className="photo-details-modal__images">
       <img className="photo-details-modal__photographer-profile" src={props.photo.user.profile}/>
